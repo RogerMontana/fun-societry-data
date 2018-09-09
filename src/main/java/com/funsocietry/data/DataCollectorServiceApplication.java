@@ -26,4 +26,8 @@ public class DataCollectorServiceApplication {
     public String time() {
         return Calendar.getInstance().getTime().toString();
     }
+    @GetMapping("/_ah/health")
+    public String healthy() {
+        return "Still surviving.";
+    }
 }
