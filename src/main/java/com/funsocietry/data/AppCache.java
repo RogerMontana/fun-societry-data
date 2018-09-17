@@ -20,7 +20,6 @@ public class AppCache {
         try(CacheManager cacheManager = newCacheManagerBuilder()
                 .withCache("initCache", newCacheConfigurationBuilder(String.class, ImageSnapshot.class, heap(100)))
                 .build(true)) {
-            getInitCache().put("test", new ImageSnapshot("test", 111111L, "BYTES" ));
         }
     }
 
@@ -42,6 +41,7 @@ public class AppCache {
     }
 
     public ImageSnapshot health() {
+        getInitCache().put("test", new ImageSnapshot("test", 111111L, "BYTES" ));
         return getInitCache().get("test");
     }
 
