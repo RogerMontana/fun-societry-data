@@ -3,8 +3,6 @@ package com.funsocietry.data;
 import org.ehcache.Cache;
 import org.ehcache.CacheManager;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Map;
 import java.util.Set;
 
@@ -14,13 +12,12 @@ import static org.ehcache.config.builders.ResourcePoolsBuilder.heap;
 
 
 public class AppCache {
-    private CacheManager cacheManager;
+    private CacheManager cache;
 
-    public AppCache() {
-        try(CacheManager cacheManager = newCacheManagerBuilder()
+    {
+        cache = newCacheManagerBuilder()
                 .withCache("initCache", newCacheConfigurationBuilder(String.class, ImageSnapshot.class, heap(100)))
-                .build(true)) {
-        }
+                .build(true);
     }
 
     public Map<String, ImageSnapshot> readAllCache(Set<String> keys) {
@@ -41,12 +38,12 @@ public class AppCache {
     }
 
     public ImageSnapshot health() {
-        getInitCache().put("test", new ImageSnapshot("test", 111111L, "BYTES" ));
+        getInitCache().put("test", new ImageSnapshot("test", 111111L, "BYTES"));
         return getInitCache().get("test");
     }
 
     private Cache<String, ImageSnapshot> getInitCache() {
-        return cacheManager.getCache("initCache", String.class, ImageSnapshot.class);
+        return cache.getCache("initCache", String.class, ImageSnapshot.class);
     }
 
 }

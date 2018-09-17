@@ -15,7 +15,7 @@ public class Controller {
     private AppCache appCache;
 
     @GetMapping("/")
-    public String hello() {
+    public String main() {
         return "Hello Spring Boot, I'm on App Engine!!!";
     }
     @GetMapping("/time")

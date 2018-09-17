@@ -1,6 +1,5 @@
 package com.funsocietry.data;
 
-import com.google.appengine.repackaged.com.google.api.client.util.Beta;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,9 +13,5 @@ public class ServiceConfiguration {
         return new AppCache();
     }
 
-    @Bean
-    public Controller controllerBean(AppCache appCache){
-        return new Controller(appCache);
-    }
 
 }
