@@ -16,7 +16,7 @@ public class Controller {
 
     @GetMapping("/")
     public String main() {
-        return "Hello Spring Boot, I'm on App Engine!!!";
+        return "index.html";
     }
     @GetMapping("/time")
     public String time() {
