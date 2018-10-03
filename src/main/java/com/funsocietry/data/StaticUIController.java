@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @AllArgsConstructor
 public class StaticUIController {
 
-    @GetMapping(value = "/")
+    @GetMapping(value = "/index")
     public String index() {
         return "index";
     }
