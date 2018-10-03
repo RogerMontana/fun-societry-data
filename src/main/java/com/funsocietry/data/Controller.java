@@ -4,12 +4,14 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Calendar;
 
 @RestController
 @AllArgsConstructor
+@RequestMapping("/api")
 public class Controller {
 
     private AppCache appCache;
@@ -27,6 +29,7 @@ public class Controller {
     public ImageSnapshot checkCache() {
         return appCache.health();
     }
+    
     @PostMapping("/consume")
     public void consumeData(@RequestBody ImageSnapshot imageSnapshot) {
         appCache.writeCache(imageSnapshot.getName(), imageSnapshot);
