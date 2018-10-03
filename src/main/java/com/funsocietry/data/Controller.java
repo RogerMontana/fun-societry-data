@@ -29,7 +29,7 @@ public class Controller {
     public ImageSnapshot checkCache() {
         return appCache.health();
     }
-    
+
     @PostMapping("/consume")
     public void consumeData(@RequestBody ImageSnapshot imageSnapshot) {
         appCache.writeCache(imageSnapshot.getName(), imageSnapshot);
