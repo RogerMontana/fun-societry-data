@@ -14,10 +14,6 @@ public class Controller {
 
     private AppCache appCache;
 
-    @GetMapping(value ="/")
-    public String index() {
-        return "index";
-    }
     @GetMapping("/time")
     public String time() {
         return Calendar.getInstance().getTime().toString();
