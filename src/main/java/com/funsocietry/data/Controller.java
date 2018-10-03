@@ -14,9 +14,9 @@ public class Controller {
 
     private AppCache appCache;
 
-    @GetMapping(value ="/", produces = "text/html")
+    @GetMapping(value ="/")
     public String index() {
-        return "index.html";
+        return "index";
     }
     @GetMapping("/time")
     public String time() {
