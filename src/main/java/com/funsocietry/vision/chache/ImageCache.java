@@ -1,23 +1,25 @@
-package com.funsocietry.data;
-
-import org.ehcache.Cache;
-import org.ehcache.CacheManager;
+package com.funsocietry.vision.chache;
 
 import java.util.Map;
 import java.util.Set;
 
-import static org.ehcache.config.builders.CacheConfigurationBuilder.newCacheConfigurationBuilder;
+import com.funsocietry.vision.domain.ImageSnapshot;
+import org.ehcache.Cache;
+import org.ehcache.CacheManager;
+import org.ehcache.config.builders.CacheConfigurationBuilder;
+
 import static org.ehcache.config.builders.CacheManagerBuilder.newCacheManagerBuilder;
 import static org.ehcache.config.builders.ResourcePoolsBuilder.heap;
 
 
-public class AppCache {
+public class ImageCache {
+
     private CacheManager cache;
 
     {
         cache = newCacheManagerBuilder()
-                .withCache("initCache", newCacheConfigurationBuilder(String.class, ImageSnapshot.class, heap(100)))
-                .build(true);
+                        .withCache("initCache", CacheConfigurationBuilder.newCacheConfigurationBuilder(String.class, ImageSnapshot.class, heap(100)))
+                        .build(true);
     }
 
     public Map<String, ImageSnapshot> readAllCache(Set<String> keys) {
@@ -45,5 +47,4 @@ public class AppCache {
     private Cache<String, ImageSnapshot> getInitCache() {
         return cache.getCache("initCache", String.class, ImageSnapshot.class);
     }
-
 }

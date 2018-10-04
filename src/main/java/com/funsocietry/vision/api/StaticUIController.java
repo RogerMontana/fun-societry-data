@@ -1,4 +1,4 @@
-package com.funsocietry.data;
+package com.funsocietry.vision.api;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;

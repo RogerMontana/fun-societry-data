@@ -1,5 +1,7 @@
-package com.funsocietry.data;
+package com.funsocietry.vision.api;
 
+import com.funsocietry.vision.domain.ImageSnapshot;
+import com.funsocietry.vision.chache.ImageCache;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,9 +14,9 @@ import java.util.Calendar;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api")
-public class Controller {
+public class ImageDataController {
 
-    private AppCache appCache;
+    private ImageCache imageCache;
 
     @GetMapping("/time")
     public String time() {
@@ -27,11 +29,11 @@ public class Controller {
 
     @GetMapping("/cache/health")
     public ImageSnapshot checkCache() {
-        return appCache.health();
+        return imageCache.health();
     }
 
     @PostMapping("/consume")
     public void consumeData(@RequestBody ImageSnapshot imageSnapshot) {
-        appCache.writeCache(imageSnapshot.getName(), imageSnapshot);
+        imageCache.writeCache(imageSnapshot.getName(), imageSnapshot);
     }
 }
