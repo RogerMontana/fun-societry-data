@@ -56,7 +56,7 @@ public class ResponseCache {
     }
 
     public TerminalResponse getState() {
-        getInitCache().put("test", new TerminalResponse("test", DateTime.now().getMillis(), category, items, mods));
+        getInitCache().put("test", new TerminalResponse("test", 0L, category, items, mods));
         return getInitCache().get("test");
     }
 
