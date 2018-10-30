@@ -1,13 +1,13 @@
-package com.funsocietry.vision;
+package com.funsocietry.noq;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class VisionServiceApplication {
+public class NoQServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(VisionServiceApplication.class, args);
+		SpringApplication.run(NoQServiceApplication.class, args);
 	}
 
 }

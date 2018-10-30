@@ -1,7 +1,7 @@
-package com.funsocietry.vision.api;
+package com.funsocietry.noq.api;
 
-import com.funsocietry.vision.domain.ImageSnapshot;
-import com.funsocietry.vision.chache.ImageCache;
+import com.funsocietry.noq.domain.TerminalResponse;
+import com.funsocietry.noq.chache.ResponseCache;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,9 +14,9 @@ import java.util.Calendar;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api")
-public class ImageDataController {
+public class NoQController {
 
-    private ImageCache imageCache;
+    private ResponseCache responseCache;
 
     @GetMapping("/time")
     public String time() {
@@ -27,13 +27,13 @@ public class ImageDataController {
         return "Still surviving.";
     }
 
-    @GetMapping("/cache/health")
-    public ImageSnapshot checkCache() {
-        return imageCache.health();
+    @GetMapping("/terminal/state")
+    public TerminalResponse getState() {
+        return responseCache.getState();
     }
 
     @PostMapping("/consume")
-    public void consumeData(@RequestBody ImageSnapshot imageSnapshot) {
-        imageCache.writeCache(imageSnapshot.getName(), imageSnapshot);
+    public void consumeData(@RequestBody TerminalResponse terminalResponse) {
+        responseCache.writeCache(terminalResponse.getName(), terminalResponse);
     }
 }

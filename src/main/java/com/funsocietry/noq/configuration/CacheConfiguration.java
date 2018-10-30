@@ -1,17 +1,17 @@
-package com.funsocietry.vision.configuration;
+package com.funsocietry.noq.configuration;
 
-import com.funsocietry.vision.chache.ImageCache;
+import com.funsocietry.noq.chache.ResponseCache;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @AllArgsConstructor
 @Configuration
-public class ChacheConfiguration {
+public class CacheConfiguration {
 
     @Bean
-    public ImageCache imageChache(){
-        return new ImageCache();
+    public ResponseCache responseCache(){
+        return new ResponseCache();
     }
 
 
