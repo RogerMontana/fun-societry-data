@@ -15,5 +15,5 @@ public class TerminalResponse {
     private List<Category> categories;
     private List<Item> items;
     private List<Mod> mods;
-    private QrCode paymentQrCode;
+    private String paymentQrCode;
 }

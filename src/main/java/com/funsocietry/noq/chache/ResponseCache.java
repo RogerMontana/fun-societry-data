@@ -57,7 +57,7 @@ public class ResponseCache {
     public TerminalResponse getState() throws IOException {
         getInitCache().put("test", new TerminalResponse("test",
                 0L, category, items, mods,
-                qrPaymentService.getPaymentCode()));
+                qrPaymentService.getPaymentCode().getEncodedQrCode()));
         return getInitCache().get("test");
     }
 
