@@ -16,7 +16,7 @@ public class QrPaymentService {
         QrCode qr = new QrCode();
 
         ClassPathResource imgFile = new ClassPathResource("static/qr/example_qr.png");
-        qr.setEncodedQrCode(getBytes(imgFile.getFile());
+        qr.setEncodedQrCode(getBytes(imgFile.getFile()));
         return qr;
     }
 
