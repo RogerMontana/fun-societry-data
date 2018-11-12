@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.Calendar;
 
 @RestController
@@ -28,7 +29,7 @@ public class NoQController {
     }
 
     @GetMapping("/terminal/state")
-    public TerminalResponse getState() {
+    public TerminalResponse getState() throws IOException {
         return responseCache.getState();
     }
 
