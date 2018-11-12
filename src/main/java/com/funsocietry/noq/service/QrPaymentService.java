@@ -12,7 +12,7 @@ public class QrPaymentService {
 
     public QrCode getPaymentCode() throws IOException {
         QrCode qr = new QrCode();
-        qr.setEncodedQrCode(getBytes(new File("/static/qr/example_qr.png")));
+        qr.setEncodedQrCode(getBytes(new File("src/main/resources/static/qr/example_qr.png")));
         return qr;
     }
     
