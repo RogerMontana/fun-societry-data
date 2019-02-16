@@ -1,4 +1,4 @@
-# fun-societry-data
+# NoQserver
 google app
 
 Spring boot application with Simple REST API ready to deploy to Google App Cloud
