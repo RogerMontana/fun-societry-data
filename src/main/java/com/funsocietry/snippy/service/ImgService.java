@@ -1,6 +1,6 @@
-package com.funsocietry.noq.service;
+package com.funsocietry.snippy.service;
 
-import com.funsocietry.noq.domain.QrCode;
+import com.funsocietry.snippy.dto.ImgSnippet;
 import lombok.AllArgsConstructor;
 import org.springframework.core.io.ClassPathResource;
 
@@ -9,14 +9,14 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 @AllArgsConstructor
-public class QrPaymentService {
+public class ImgService {
 
 
-    public QrCode getPaymentCode() throws IOException {
-        QrCode qr = new QrCode();
+    public ImgSnippet getImage() throws IOException {
+        ImgSnippet qr = new ImgSnippet();
 
         ClassPathResource imgFile = new ClassPathResource("static/qr/example_qr.png");
-        qr.setEncodedQrCode(getBytes(imgFile.getFile()));
+        qr.setEncodedCode(getBytes(imgFile.getFile()));
         return qr;
     }
 

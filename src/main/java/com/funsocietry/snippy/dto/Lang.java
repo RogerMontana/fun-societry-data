@@ -1,4 +1,4 @@
-package com.funsocietry.noq.domain;
+package com.funsocietry.snippy.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,7 +7,6 @@ import lombok.Value;
 @Value
 @Builder
 @AllArgsConstructor
-public class Category {
-    private long id;
+public class Lang {
     private String name;
 }
