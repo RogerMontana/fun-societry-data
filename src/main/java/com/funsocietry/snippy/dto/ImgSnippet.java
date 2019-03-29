@@ -1,12 +1,12 @@
 package com.funsocietry.snippy.dto;
 
-import lombok.Data;
-import org.apache.commons.codec.binary.Base64;
+import java.io.UnsupportedEncodingException;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.io.UnsupportedEncodingException;
+import org.apache.commons.codec.binary.Base64;
 
 @Builder
 @NoArgsConstructor
